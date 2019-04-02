@@ -1,0 +1,6 @@
+user-agent: *
+Disallow: /model/
+Disallow: /_css/
+Disallow: /_js/
+Disallow: pcontrole.php
+sitemap: http://desafiodosecritores.ga/sitemap.xml
