@@ -64,7 +64,7 @@
         $r = $login->logar();
         if(is_numeric($r)){
             $_SESSION['user'] = $r;//vai receber o id
-            if($_POST['lembrete'] == true){
+            if(array_key_exists('lembrete', $_POST)){
                 $expira = time() + 60*60*24*30; 
                 setCookie('CookieLembrete', true, $expira);
                 setCookie('CookieEmail', base64_encode($_POST['email']), $expira);
