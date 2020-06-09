@@ -11,8 +11,8 @@
          $mail->Mailer= 'smtp';
          $mail->Host = "smtp.gmail.com";//hospedagem
          $mail->SMTPAuth = true;
-         $mail->Username = "wanderley3101@gmail.com";
-         $mail->Password = "senha";
+         $mail->Username = "seuemail";
+         $mail->Password = "suasenha";
          $mail->SMTPsecure = "tls";//segurança
          $mail->Port = 587;
          $mail->FromName = "Suporte";
