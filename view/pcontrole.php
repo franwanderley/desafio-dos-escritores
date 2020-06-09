@@ -66,9 +66,8 @@
     ?>
     <div class="artigo">
         <?php
-            $idc = base64_encode($artigo['id']);
-            echo "<script>var x = '".$idc."'</script>";
-            echo "<button class='btn-apagar' onclick='apagar(x);'><i class='fas fa-trash'></i></button>";
+            $idc = base64_encode($artigo['id']);//id do artigo
+            echo "<button class='btn-apagar' onclick= {apagar()}><i class='fas fa-trash'></i></button>";
             $a = new Artigo($artigo['temaid'], $artigo['titulo'],$artigo['resumo'], $artigo['texto'], $artigo['date']);
             echo $a->mostrarArtigoR();
             unset($a);
@@ -108,7 +107,9 @@
     ?>
     <!-- Modal de Confirmação -->
     <script>
-        function apagar(valor){
+        function apagar(){
+            //console.log(x);
+            var x = '<?php echo $idc; ?>';
             swal({
                 title: 'Você tem certeza?',
                 text: 'Deseja realmente apagar este artigo?',
@@ -118,7 +119,7 @@
               })
               .then((willDelete) => {
                 if (willDelete) {
-                    window.location.replace('../controller/apagar.php?id='+valor);
+                    window.location.replace('../controller/apagar.php?id='+x);
                 } else {
                   swal('O artigo não foi apagado!');
                 }
